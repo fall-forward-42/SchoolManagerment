@@ -1,0 +1,51 @@
+{{#if lopHoc}}
+<div class="d-lg-flex justify-content-around align-items-center bg-primary text-white p-2 rounded ">
+    <h3 class="text-white">{{lopHoc.TenLop}}</h3>
+    <p class="bg-info rounded p-1">{{lopHoc.BatDau}} - {{lopHoc.KetThuc}} </p>
+    <h5 class="text-white">GVCN: {{lopHoc.GVCN}}</h5>
+</div>
+{{#if thanhVienList}}
+<div class="container ">
+    <table class="table">
+        <thead>
+            <tr class="text-center">
+                <th scope="col">SBD</th>
+                <th scope="col">Hình Ảnh</th>
+                <th scope="col">Họ Tên</th>
+                <th scope="col">Giới Tính</th>
+                <th scope="col">Ngày Sinh</th>
+                <th scope="col">Địa Chỉ</th>
+                <th scope="col">Nghỉ</th>
+                <th scope="col">Lưu Ban</th>
+                <th scope="col">Điểm Tổng Kết</th>
+                <th scope="col">Hạnh Kiểm</th>
+                <th scope="col">Xếp Loại</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {{#each thanhVienList}}
+            <tr class="text-center">
+                <th scope="row">{{this.SoBaoDanh}}</th>
+                <td>
+                    <img src={{this.Avatar}} class="card-img  " alt="..." style="width: 100px; heigth: 100px ">
+                </td>
+                <td>{{this.HoTen}}</td>
+                <td>{{this.GioiTinh}}</td>
+                <td>{{this.NgayThangSinh}}</td>
+                <td>{{this.DiaChi}}</td>
+                <td>{{this.SoBuoiNghi}}</td>
+                <td>{{this.LuuBan}}</td>
+                <td>{{this.DiemTongKet}}</td>
+                <td>{{this.HanhKiem}}</td>
+                <td>{{this.ThanhTich}}</td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+</div>
+{{else}}
+<h1 class="text-center">Chưa có học sinh nào !</h1>
+{{/if}}
+{{/if}}

@@ -1,0 +1,64 @@
+<ul class="navbar-nav bg-gradient-primary  sidebar p-3  border z-index col-lg-2 col-sm" style="z-index: 10">
+        <!-- Sidebar - Brand -->
+
+        <li class="nav-item active">
+            <a class="nav-link " href="lop-hoc">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Lớp học đang có</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Học Sinh
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#ProfileCollapse"
+                aria-expanded="true" aria-controls="ProfileCollapse">
+                <i class="fa-solid fa-graduation-cap"></i>  
+                <span>Hồ Sơ cá nhân</span>
+            </a>
+            <div id="ProfileCollapse" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded d-flex flex-column  ">
+                    <a class="collapse-item btn btn-primary my-1 " href="profile-hs"><i class="fa-solid fa-file "></i> Thông tin cá nhân </a>
+                    <a class="collapse-item btn btn-primary my-1" href="account-hs"><i class="fa-solid fa-lock"></i> Thông tin tài khoản </a>
+                    <a class="collapse-item btn btn-primary my-1" href="parents-hs"><i class="fa-solid fa-person"></i> Người giám hộ </a>
+                    <a class="collapse-item btn btn-primary my-1" href="activities-hs"><i class="fa-solid fa-house-user"></i> Hoạt động ngoại khóa </a>
+                    <a class="collapse-item btn btn-primary my-1" href="health-hs"><i class="fa-solid fa-suitcase-medical"></i> Sức Khỏe </a>
+                </div>
+            </div>
+        </li>
+ <hr class="sidebar-divider">
+
+
+        {{!-- if enter the class --}}
+        {{#if classExist}}
+        <div class="sidebar-heading">
+            Lớp Học
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#classCollapse"
+                aria-expanded="true" aria-controls="classCollapse">
+                <i class="fa-solid fa-person-chalkboard"></i>
+                <span>Thông tin lớp </span>
+            </a>
+            <div id="classCollapse" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded d-flex flex-column ">
+                    <a class="collapse-item collapse-item btn btn-primary my-1" href="class-info"><i class="fa-solid fa-star"></i> Thành Tích</a>
+                    <a class="collapse-item collapse-item btn btn-primary my-1" href="class-seats"><i class="fa-solid fa-chair"></i> Chỗ Ngồi </a>
+                    <a class="collapse-item collapse-item btn btn-primary my-1" href="class-schedual"><i class="fa-solid fa-table"></i> Thời Khóa Biểu</a>
+                    <a class="collapse-item collapse-item btn btn-primary my-1" href="class-exams"><i class="fa-solid fa-file-lines"></i> Bài Kiểm Tra</a>
+                    <a class="collapse-item collapse-item btn btn-primary my-1" href="class-comments"><i class="fa-solid fa-comment"></i> Đánh Giá Giáo Viên</a>
+                </div>
+            </div>
+        </li>
+        {{/if }}
+    </ul>
+<script>
+    
+</script>

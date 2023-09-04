@@ -1,0 +1,18 @@
+<div class="p-10 h-1260">
+  <h1 class="text-uppercase">Đăng nhập</h1>
+  <form action="/login" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label ">Tên Đăng Nhập</label>
+      <input type="text" name="username" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Mật Khẩu</label>
+      <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    {{#if errors.username}}
+    <span class="text-danger"> {{errors.username.msg}} </span>
+    {{/if}}
+    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+    <button class="btn btn-second"><a href="/register">Đăng Ký</a></button>
+  </form>
+</div>

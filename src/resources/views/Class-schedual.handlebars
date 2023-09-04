@@ -1,0 +1,61 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Thứ</th>
+            <th scope="col">Sáng</th>
+            <th scope="col"></th>
+            <th scope="col">Trưa</th>
+            <th scope="col"></th>
+            <th scope="col">Chiều</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"></th>
+            <th scope="row">Ca 1</th>
+            <th scope="row">Ca 2</th>
+            <th scope="row">Ca 3</th>
+            <th scope="row">Ca 4</th>
+            <th scope="row">Ca 5</th>
+        </tr>
+        {{#if tkb}}
+        <tr>
+            <td>Thứ 2</td>
+            {{#each tkb.Thu2}}
+                    <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        <tr>
+            <td>Thứ 3</td>
+            {{#each  tkb.Thu3}}
+                    <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        <tr>
+            <td>Thứ 4</td>
+            {{#each  tkb.Thu4}}
+                    <td>{{this}}</td>
+            {{/each}}
+        </tr>
+          
+       <tr>
+            <td>Thứ 5</td>
+            {{#each  tkb.Thu5}}
+                    <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        <tr>
+            <td>Thứ 6</td>
+            {{#each  tkb.Thu6}}
+                    <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        <tr>
+            <td>Thứ 7</td>
+            {{#each  tkb.Thu7}}
+                    <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        {{/if}}
+    </tbody>
+</table>

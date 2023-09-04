@@ -1,0 +1,57 @@
+<div class="">
+    <h5>Các lớp học hiện tại</h5>
+    {{!-- add more class --}}
+    <button class="btn btn-primary center mb-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#add-more-class">Thêm lớp học</button>
+    <div class="collapse  p-2 rounded" id="add-more-class">
+        <form action="lop-hoc" method="POST">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label ">Tên lớp học</label>
+                <input type="text" name="TenLop" class="form-control">
+            </div>
+            <div class="d-lg-flex  justify-content-between">
+                <div class="mb-3 ">
+                    <label class="form-label">Ngày khai giảng</label>
+                    <input type="date" name="BatDau" class="form-control">
+                </div>
+                <div class="mb-3 ">
+                    <label class="form-label">Ngày bế giảng</label>
+                    <input type="date" name="KetThuc" class="form-control">
+                </div>
+                <div class="mb-3 ">
+                    <label class="form-label">Giáo viên chủ nhiệm</label>
+                    <input type="text" name="GVCN" class="form-control">
+                </div>
+                <div class="mb-3 ">
+                    <label class="form-label">Số lượng học viên</label>
+                    <input type="number" name="SoLuong" class="form-control">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Xác Nhận</button>
+        </form>
+    </div>
+</div>
+{{#if lopHocAll }}
+{{!-- show classes --}}
+<ul class=" container-box-class list-group">
+    {{#each lopHocAll}}
+    {{!-- handle click item --}}
+    <a class="text-decoration-none" href="thong-tin-lop-hoc?id={{_id}}">
+        {{!-- classes --}}
+        <li class="bg-white rounded  shadow  mt-3 mb-3 box-class list-group-item " id={{_id}}>
+            <h2 class="bg-primary rounded text-center text-white"><span class="nameClass ">{{TenLop}}</span></h2>
+            <p class="dateClass">Niên Khóa: <span class="dateStartClass">{{BatDau}}</span> - <span
+                    class="dateFinishClass">{{KetThuc}}</span></p>
+            <h5 class="bg-secondary rounded text-white  p-2 text-center">GVNC: <span class="teachName">{{GVCN}}</span>
+            </h5>
+            <h6 class="bg-light rounded w-50  p-2">Số Lượng: <span class="numberOfStudent">{{SoLuong}}</span></h6>
+        </li>
+    </a>
+    {{/each}}
+
+</ul>
+{{else}}
+<h5>Chưa có lớp học nào (thêm lớp học ngay !)</h5>
+{{/if}}
+

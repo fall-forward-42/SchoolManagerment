@@ -1,0 +1,41 @@
+{{>flash-message}}
+<div class="p-10 ">
+    <h1 class="text-uppercase">Đăng Ký</h1>
+    <form action="/register" method="POST">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label ">Tên Đăng Nhập</label>
+            <input type="text" name="username" class="form-control">
+             {{#if errors.username }}
+            <span class="text-danger">  {{errors.username.msg}} </span>
+            {{/if}}
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mật Khẩu <span class="form-text">Mật Khẩu trên 6 ký tự và kèm theo ký tự đặc biệt</span></label>
+            <input type="password" name="password" class="form-control" id="pass">
+              {{#if errors.password}}
+                <span class="text-danger">  {{errors.password.msg}} </span>
+            {{/if}}
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Xác Nhận Mật Khẩu</label>
+            <input type="password" name="confirmPass" class="form-control" >
+            {{#if errors.confirmPass}}
+            <span class="text-danger">  {{errors.confirmPass.msg}} </span>
+            {{/if}}
+            
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Bạn là:</label>
+            <select class="form-select" name="typeAccount">
+                <option value="Giáo Viên">Giáo Viên</option>
+                <option value="Học Sinh">Học Sinh</option>
+            </select>
+            
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng Ký</button>
+    </form>
+</div>
+

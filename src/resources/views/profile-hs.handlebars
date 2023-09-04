@@ -1,0 +1,64 @@
+<div class=" ">
+    <h3 class="text-uppercase">Thông tin cá nhân học sinh</h3>
+    {{#if profile}}
+    {{!-- info exist --}}
+    <form action="profile-hs-update" method="POST" class="">
+    {{else}}
+    {{!-- no info exist --}}
+    <p class="bg-warning rounded p-2 text-center text-red">Vui lòng thêm thông tin !</p>
+    <form action="profile-hs" method="POST" class="">
+    {{/if}}
+
+
+        {{!-- hoten --}}
+        <div class="mb-3 w-100 ">
+            <label class="form-label ">Họ và tên </label>
+            <div class="d-flex justify-content-around">
+                <p class="bg-info p-2 rounded-start w-50 h-50 border-end-0">{{profile.HoTen}}</p>
+                <input type="text" name="HoTen" class=" w-50 h-50 p-2 rounded-end  form-control">
+                {{#if errors.HoTen}}
+                    <span class="text-red">{{errors.HoTen.msg}}</span>
+                {{/if}}
+            </div>
+        </div>
+        {{!-- ngaysinh --}}
+        <div class="mb-3 w-100 ">
+            <label class="form-label ">Ngày tháng năm sinh
+            </label>
+            <div class="d-flex ">
+                <p class="bg-info p-2 rounded-start w-50 h-50 border-end-0">{{profile.NgayThangSinh}}</p>
+                <input type="datetime-local" name="NgayThangSinh" class=" w-50 h-50 p-2 rounded-end  form-control">
+                {{#if errors.NgayThangSinh}}
+                    <span class="text-red">{{error.NgayThangSinh.msg}}</span>
+                {{/if}}
+            </div>
+        </div>
+
+        {{!-- gioitinh --}}
+        <div class="mb-3 w-100   ">
+            <label class="form-label">Giới tính: </label>
+            <div class="d-flex ">
+                <p class="bg-info p-2 ounded-start w-100 h-50 border-end-0">{{profile.GioiTinh}}</p>
+                <select class="form-select  w-100 h-50 p-2 rounded-end" name="GioiTinh">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        {{!-- diachi --}}
+        <div class="mb-3 w-100">
+            <label class="form-label ">Địa chỉ </label>
+            <div class="d-flex justify-content-around">
+                <p class="bg-info p-2 rounded-start w-50 h-50 border-end-0">{{profile.DiaChi}}</p>
+                <input type="text" name="DiaChi" class=" w-50 h-50 p-2 rounded-end  form-control">
+                {{#if errors.DiaChi}}
+                    <span class="text-red">{{errors.DiaChi.msg}}</span>
+                {{/if}}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Cập Nhật Thông Tin</button>
+    </form>
+</div>

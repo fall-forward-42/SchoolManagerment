@@ -1,0 +1,21 @@
+@media only screen and (max-width: 800px) {
+  .container-box-class {
+    display: flex;
+    flex-direction: column; } }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-box-class {
+    display: grid;
+    gap: 5px;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    overflow-y: auto; } }
+
+.box-class:hover {
+  cursor: pointer;
+  transform: translate(0, -10px); }
+
+.box-class {
+  transition: transform ease 300ms; }
